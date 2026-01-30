@@ -1,0 +1,15 @@
+/*
+Theme Name: SEO Agency Theme
+Theme URI: https://example.com
+Author: Your Name
+Author URI: https://example.com
+Description: Modern SEO agency theme with Tailwind CSS
+Version: 1.0.0
+License: GPL v2 or later
+Text Domain: seo-agency
+*/
+
+/* Minimal CSS - Tailwind handles most styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+}
