@@ -1,5 +1,5 @@
 <section class="hero-section bg-[#1a2b47] text-white relative overflow-hidden">
-    <div class="container mx-auto px-6 pt-16 pb-32 text-center relative z-20">
+    <div class="container mx-auto px-6 pt-16 pb-20 sm:pt-16 sm:pb-12 text-center relative z-20">
         <div class="before:content-[''] before:absolute before:top-[-10%] before:left-[20%] before:w-[60%] before:h-[50%] before:bg-[#155DFC33] before:blur-[80px]">
             <div class="inline-block px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-xs text-slate-300 mb-6">
                 <img draggable="false" role="img" class="emoji" src="https://cdn-icons-png.flaticon.com/512/14035/14035769.png"> <?php echo get_theme_mod('hero_badge', '✨ Scalable Enterprise Solutions'); ?>
@@ -71,7 +71,7 @@
         );
         ?>
 
-        <div class="border-t border-slate-800 py-[60px]">
+        <div class="border-t border-slate-800 pb-10 sm:py-[60px]">
             <p class="text-center !text-[14px] text-gray-500 font-semibold pb-8">Trusted by Industry-Leading Agencies & Fast-Growing Brands</p>
             <div class="container mx-auto px-6">
                 <?php
@@ -84,7 +84,7 @@
                 ?>
 
                 <?php if ($client_logos->have_posts()) : ?>
-                    <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16" style="<?php echo $logo_style; ?>">
+                    <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-8 md:gap-16" style="<?php echo $logo_style; ?>">
                         <?php while ($client_logos->have_posts()) :
                             $client_logos->the_post();
                             $logo_url = get_post_meta(get_the_ID(), '_client_logo_url', true);
@@ -114,7 +114,7 @@
                                     <div class="h-full flex items-center justify-center hover:opacity-100 transition-opacity duration-300">
                                         <?php if (has_post_thumbnail()) : ?>
                                             <?php the_post_thumbnail('full', [
-                                                'class' => 'h-full w-auto object-contain max-w-[250px]',
+                                                'class' => 'h-full w-auto object-contain max-w-[80px] sm:max-w-[250px]',
                                                 'style' => 'max-height: 48px;',
                                                 'alt' => $alt_text,
                                             ]); ?>

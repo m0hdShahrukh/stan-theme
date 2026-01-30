@@ -9,25 +9,26 @@ $services_query = new WP_Query([
 
 <section class="py-24 bg-white">
     <div class="container mx-auto px-6">
-        <div class="flex justify-between flex-row !items-baseline">
-            <div class="mb-16">
+        <div class="flex justify-between flex-col sm:flex-row !items-baseline">
+            <div class="mb-8 sm:mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
                     Our SEO Services That <br>
                     <span class="text-[#155DFC]">Drive Scalable Growth</span>
                 </h2>
                 <p class="text-slate-500">End-to-end solutions for high-growth teams.</p>
             </div>
-            <div class="text-center mt-12">
-                <a href="<?php echo get_post_type_archive_link('service'); ?>" class="group inline-block border border-slate-300 text-slate-700 px-8 py-3.5 rounded-full font-semibold 
-          transition-all duration-300 hover:border-black hover:bg-black hover:text-white">
+            <div class="text-center mt-0 mb-10 sm:mb-8 sm:mt-12">
+                <a href="<?php echo get_post_type_archive_link('service'); ?>" class="group inline-block border border-slate-300 text-slate-700 px-8 py-3.5 rounded-full font-semibold transition-all duration-300 hover:border-black hover:bg-black hover:text-white">
                     View Full Catalog <span class="inline-block transition-transform duration-300 group-hover:translate-x-2">→</span>
                 </a>
             </div>
         </div>
+
         <?php if ($services_query->have_posts()) : ?>
-            <div class="grid md:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <?php
-                $col_spans = ['col-span-2', '', '', '', 'col-span-2', ''];
+                // Added md: prefix to spans so they only apply on desktop
+                $col_spans = ['md:col-span-2', '', '', '', 'md:col-span-2', ''];
                 $index = 0;
 
                 while ($services_query->have_posts()) :
@@ -60,8 +61,7 @@ $services_query = new WP_Query([
                 ?>
             </div>
         <?php else : ?>
-            <!-- Fallback static services -->
-            <div class="grid md:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <?php
                 $static_services = [
                     [
@@ -69,7 +69,6 @@ $services_query = new WP_Query([
                         'title' => 'Managed Content',
                         'desc' => 'Full service strategy and content creation that ranks, scales, and drives revenue reliably.',
                     ],
-                    // Add other static services here
                 ];
 
                 foreach ($static_services as $service) :
